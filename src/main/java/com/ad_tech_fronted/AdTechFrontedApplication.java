@@ -1,0 +1,13 @@
+package com.ad_tech_fronted;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class AdTechFrontedApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(AdTechFrontedApplication.class, args);
+	}
+
+}
