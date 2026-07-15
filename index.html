@@ -3,96 +3,386 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AD Tech Enterprises</title>
-     
+
+    <title>AD Tech Enterprises Pvt. Ltd.</title>
+
     <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
+
 <body>
 
-    <nav>
-        <h2>AD Tech Enterprises</h2>
 
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
+<header>
+
+    <div class="logo">
+        <i class="fa-solid fa-robot"></i>
+        AD Tech
+    </div>
+
+    <nav id="navMenu">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home">
+    <div class="menu-btn" id="menuBtn">
+        <i class="fa-solid fa-bars"></i>
+    </div>
 
-        <h1>Building Future Tech Talent</h1>
+</header>
 
-        <p>
-            AI Automation as a Service Company helping businesses become AI First.
-        </p>
 
-<button onclick="location.href='#contact'">Contact Us</button>    </section>
+<section class="hero" id="home">
 
-    <!-- About -->
-    <section id="about">
+<div class="hero-content">
 
-        <h2>About Us</h2>
+<span class="badge">
+Building Future Tech Talent
+</span>
 
-        <p>
-            AD Tech Enterprises Pvt. Ltd. provides AI Automation,
-            Enterprise Software Solutions, AI Agents and Digital Services.
-        </p>
-       
-    </section>
+<h1>
 
-    <!-- Services -->
-    <section id="services">
+Transform Your Business
+with
+<span>AI Automation</span>
 
-        <h2>Our Services</h2>
+</h1>
 
-        <div class="service-card">AI Automation</div>
+<p>
 
-        <div class="service-card">Custom AI Agents</div>
+AD Tech Enterprises Pvt. Ltd. helps businesses become
+AI-First through intelligent automation, AI Agents,
+enterprise software and modern digital solutions.
 
-        <div class="service-card">Web Development</div>
+</p>
 
-        <div class="service-card">Mobile App Development</div>
+<div class="hero-buttons">
 
-    </section>
+<a href="#services" class="btn primary">
+Explore Services
+</a>
 
-    <!-- Contact -->
-    <section id="contact">
+<a href="#contact" class="btn secondary">
+Contact Us
+</a>
 
-        <h2>Contact Us</h2>
+</div>
 
-        <form id="contactForm">
+</div>
 
-            <input type="text" id="name" placeholder="Enter Name" required>
+<div class="hero-image">
 
-            <input type="email" id="email" placeholder="Enter Email" required>
+<div class="glass-card">
 
-            <input type="text" id="company" placeholder="Company Name" required>
+<i class="fa-solid fa-microchip"></i>
 
-            <textarea id="message" placeholder="Message" required></textarea>
+<h3>AI Powered</h3>
 
-            <button type="submit">Submit</button>
+<p>
+Automation Solutions
+</p>
 
-        </form>
+</div>
 
-    </section>
+<div class="glass-card">
 
-    <script src="script.js"></script>
-    
-    <footer>
-    <h3>AD Tech Enterprises Pvt. Ltd.</h3>
+<i class="fa-solid fa-laptop-code"></i>
 
-    <p>Building Future Tech Talent</p>
+<h3>Modern Apps</h3>
 
-    <p>Email: hradtechenterpriseschepvtltd@gmail.com</p>
+<p>
+Web & Mobile
+</p>
 
-    <p>Phone: +91 83193 58568</p>
+</div>
 
-    <p>&copy; 2026 AD Tech Enterprises. All Rights Reserved.</p>
+<div class="glass-card">
+
+<i class="fa-solid fa-chart-line"></i>
+
+<h3>Growth</h3>
+
+<p>
+Enterprise Software
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+<h2 class="section-title">
+About Us
+</h2>
+
+<div class="about-container">
+
+<div class="about-image">
+
+<div class="circle"></div>
+
+<i class="fa-solid fa-brain"></i>
+
+</div>
+
+<div class="about-content">
+
+<h3>
+
+AI Automation as a Service
+
+</h3>
+
+<p>
+
+AD Tech Enterprises Pvt. Ltd. is an AI Automation
+company helping organizations automate workflows,
+develop AI agents and create enterprise software
+that improves productivity and business growth.
+
+</p>
+
+<div class="stats">
+
+<div class="stat-box">
+
+<h4>100+</h4>
+
+<p>Projects</p>
+
+</div>
+
+<div class="stat-box">
+
+<h4>50+</h4>
+
+<p>Clients</p>
+
+</div>
+
+<div class="stat-box">
+
+<h4>24/7</h4>
+
+<p>Support</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services" id="services">
+
+<h2 class="section-title">
+
+Our Services
+
+</h2>
+
+<div class="service-container">
+
+<div class="service-card">
+
+<i class="fa-solid fa-robot"></i>
+
+<h3>
+
+AI Automation
+
+</h3>
+
+<p>
+
+Automate repetitive business operations with AI.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-brain"></i>
+
+<h3>
+
+Custom AI Agents
+
+</h3>
+
+<p>
+
+Build intelligent AI assistants for enterprises.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-code"></i>
+
+<h3>
+
+Web Development
+
+</h3>
+
+<p>
+
+Modern responsive websites and enterprise portals.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fa-solid fa-mobile-screen-button"></i>
+
+<h3>
+
+Mobile Apps
+
+</h3>
+
+<p>
+
+Cross-platform Android & iOS applications.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">
+
+Contact Us
+
+</h2>
+
+<div class="contact-container">
+
+<div class="contact-info">
+
+<h3>
+
+Let's Build Something Amazing
+
+</h3>
+
+<p>
+
+Get in touch with our team today.
+
+</p>
+
+<div class="info">
+
+<i class="fa-solid fa-envelope"></i>
+
+<span>hradtechenterpriseschepvtltd@gmail.com</span>
+
+</div>
+
+<div class="info">
+
+<i class="fa-solid fa-phone"></i>
+
+<span>+91 83193 58568</span>
+
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<form id="contactForm">
+
+<input
+type="text"
+id="name"
+placeholder="Your Name"
+required>
+
+<input
+type="email"
+id="email"
+placeholder="Your Email"
+required>
+
+<input
+type="text"
+id="company"
+placeholder="Company">
+
+<textarea
+id="message"
+placeholder="Your Message"
+required></textarea>
+
+<button type="submit" id="submitBtn">
+
+Send Message
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- Toast -->
+
+<div id="toast"></div>
+
+
+<button id="scrollTop">
+
+<i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+<footer>
+
+<p>
+
+© 2026 AD Tech Enterprises Pvt. Ltd.
+All Rights Reserved.
+
+</p>
 
 </footer>
+
+<script src="script.js"></script>
 
 </body>
 </html>
