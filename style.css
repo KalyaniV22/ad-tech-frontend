@@ -839,3 +839,12 @@ font-size:22px;
 }
 
 }
+nav a.active{
+color:#4f46e5;
+font-weight:700;
+}
+
+button:disabled{
+opacity:.7;
+cursor:not-allowed;
+}
