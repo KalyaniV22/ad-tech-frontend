@@ -16,28 +16,20 @@ document.querySelectorAll("nav a").forEach(link => {
 });
 
 // ===============================
-// Scroll To Top Button
+// Scroll To Top
 // ===============================
 
 const scrollTop = document.getElementById("scrollTop");
 
 window.addEventListener("scroll", () => {
-
-    if (window.scrollY > 300) {
-        scrollTop.style.display = "block";
-    } else {
-        scrollTop.style.display = "none";
-    }
-
+    scrollTop.style.display = window.scrollY > 300 ? "block" : "none";
 });
 
 scrollTop.addEventListener("click", () => {
-
     window.scrollTo({
         top: 0,
         behavior: "smooth"
     });
-
 });
 
 // ===============================
@@ -50,7 +42,7 @@ function showToast(message, success = true) {
 
     toast.innerText = message;
 
-    toast.style.background = success ? "#22c55e" : "#ef4444";
+    toast.style.background = success ? "#16a34a" : "#dc2626";
 
     toast.classList.add("show");
 
@@ -69,7 +61,7 @@ const submitBtn = document.getElementById("submitBtn");
 
 const API_URL = "https://ad-tech-enterprises-2.onrender.com/contact";
 
-form.addEventListener("submit", async function (event) {
+form.addEventListener("submit", async (event) => {
 
     event.preventDefault();
 
@@ -93,25 +85,31 @@ form.addEventListener("submit", async function (event) {
         contact.message === ""
     ) {
 
-        showToast("Please fill all required fields", false);
+        showToast("Please fill all required fields.", false);
         return;
 
     }
 
-    // Email Validation
-
-    const emailPattern =
+    const emailRegex =
         /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    if (!emailPattern.test(contact.email)) {
+    if (!emailRegex.test(contact.email)) {
 
-        showToast("Enter a valid email address", false);
+        showToast("Please enter a valid email.", false);
         return;
 
     }
 
+    // Loading State
+
     submitBtn.disabled = true;
-    submitBtn.innerHTML = "Sending...";
+
+    submitBtn.innerHTML = `
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        Sending Message...
+    `;
+
+    showToast("Please wait... Sending your message.");
 
     try {
 
@@ -120,7 +118,9 @@ form.addEventListener("submit", async function (event) {
             method: "POST",
 
             headers: {
+
                 "Content-Type": "application/json"
+
             },
 
             body: JSON.stringify(contact)
@@ -129,13 +129,13 @@ form.addEventListener("submit", async function (event) {
 
         if (response.ok) {
 
-            showToast("Message Sent Successfully!");
+            showToast("✅ Message Sent Successfully!");
 
             form.reset();
 
         } else {
 
-            showToast("Something Went Wrong!", false);
+            showToast("❌ Failed to send message.", false);
 
         }
 
@@ -143,12 +143,16 @@ form.addEventListener("submit", async function (event) {
 
         console.error(error);
 
-        showToast("Server Connection Failed!", false);
+        showToast("❌ Server is unreachable.", false);
 
     }
 
     submitBtn.disabled = false;
-    submitBtn.innerHTML = "Send Message";
+
+    submitBtn.innerHTML = `
+        <i class="fa-solid fa-paper-plane"></i>
+        Send Message
+    `;
 
 });
 
@@ -190,87 +194,59 @@ window.addEventListener("scroll", () => {
 });
 
 // ===============================
-// Scroll Animation
+// Scroll Reveal Animation
 // ===============================
 
-const observer = new IntersectionObserver(
+const observer = new IntersectionObserver((entries) => {
 
-(entries) => {
+    entries.forEach(entry => {
 
-entries.forEach(entry => {
+        if (entry.isIntersecting) {
 
-if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
 
-entry.target.style.opacity = "1";
-entry.target.style.transform = "translateY(0)";
+        }
 
-}
+    });
+
+}, {
+
+    threshold: 0.2
 
 });
 
-},
+document.querySelectorAll(
+".service-card, .glass-card, .stat-box, .contact-form"
+).forEach(item => {
 
-{
-threshold:0.2
-}
+    item.style.opacity = "0";
+    item.style.transform = "translateY(40px)";
+    item.style.transition = "0.8s ease";
 
-);
-
-const animatedItems = document.querySelectorAll(
-
-".service-card, .stat-box, .glass-card, .contact-form"
-
-);
-
-animatedItems.forEach(item => {
-
-item.style.opacity = "0";
-
-item.style.transform = "translateY(40px)";
-
-item.style.transition = "all 0.8s ease";
-
-observer.observe(item);
+    observer.observe(item);
 
 });
 
 // ===============================
-// Hero Button Ripple Effect
-// ===============================
-
-document.querySelectorAll(".btn").forEach(button => {
-
-button.addEventListener("mouseenter", () => {
-
-button.style.transform = "translateY(-4px)";
-
-});
-
-button.addEventListener("mouseleave", () => {
-
-button.style.transform = "translateY(0)";
-
-});
-
-});
-
-// ===============================
-// Header Shadow on Scroll
+// Header Shadow
 // ===============================
 
 const header = document.querySelector("header");
 
 window.addEventListener("scroll", () => {
 
-if (window.scrollY > 50) {
+    if (window.scrollY > 50) {
 
-header.style.boxShadow = "0 8px 25px rgba(0,0,0,.15)";
+        header.style.boxShadow =
+            "0 10px 30px rgba(0,0,0,.15)";
 
-} else {
+    } else {
 
-header.style.boxShadow = "0 5px 20px rgba(0,0,0,.08)";
+        header.style.boxShadow =
+            "0 5px 20px rgba(0,0,0,.08)";
 
-}
+    }
 
 });
 
@@ -278,4 +254,4 @@ header.style.boxShadow = "0 5px 20px rgba(0,0,0,.08)";
 // Console
 // ===============================
 
-console.log("AD Tech Enterprises Website Loaded Successfully 🚀");
+console.log("🚀 AD Tech Enterprises Website Loaded Successfully");
